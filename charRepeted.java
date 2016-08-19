@@ -8,22 +8,24 @@ public class charRepeted {
 		String str = "";
 		int k = 0;
 		for (int i = 0; i < a.length; i++) {
-			System.out.println(i);
+			r[i] = 0;
 			if (Character.isAlphabetic(a[i])) {
 				b[k] = a[i];
-				System.out.println("b=" + b[k]);
 			}
-			if (i < a.length - 2) {
+			if (i < a.length - 1) {
 				if (Character.isDigit(a[i + 1])) {
 					r[k] = (r[k] * 10) + Character.getNumericValue(a[i + 1]);
-					System.out.println("r1=" + r[k]);
 				}
-				if (Character.isDigit(a[i + 2])) {
-					r[k] = (r[k] * 10) + Character.getNumericValue(a[i + 2]);
-					System.out.println("r2=" + r[k]);
+			}
+			if (Character.isAlphabetic(a[input.length() - 2])) {
+				if (i < a.length - 2) {
+					if (Character.isDigit(a[i + 2])) {
+						r[k] = (r[k] * 10) + Character.getNumericValue(a[i + 2]);
+						i++;
 
+					}
+					i++;
 				}
-				i++;
 			}
 			k++;
 		}
@@ -37,7 +39,7 @@ public class charRepeted {
 	}
 
 	public static void main(String[] args) {
-		function("g4p14");
+		function("g5i5");
 
 	}
 
